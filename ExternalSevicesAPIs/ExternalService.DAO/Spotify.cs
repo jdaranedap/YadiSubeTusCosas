@@ -24,8 +24,9 @@ namespace ExternalService.DAO
             var result = ParseToArtistVM(resultTopArtist.Result);
             return result;
         }
-        public List<TrackVM> GetTracksByArtist(string token,string hrefArtist)
+        public List<TrackVM> GetTracksByArtist(string hrefArtist)
         {
+            var token = spotifyServiceConnect.GetToken();
             var resultTopTracks = spotifyServiceConnect.GetTopTracksByArtist(hrefArtist, token);
             var result = ParseToTrackVM(resultTopTracks.Result);
             return result;

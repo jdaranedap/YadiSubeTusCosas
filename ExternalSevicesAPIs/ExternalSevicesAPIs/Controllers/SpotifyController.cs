@@ -26,9 +26,9 @@ namespace ExternalSevicesAPIs.Controllers
             return result;
         }
         [HttpGet("GetTopTracks", Name = "GetTopTracksByUser")]
-        public IEnumerable<TrackVM> GetTopTracks(string token, string hrefArtist)
+        public IEnumerable<TrackVM> GetTopTracks(string hrefArtist)
         {
-            var result = spotifyDAO.GetTracksByArtist(token, hrefArtist);
+            var result = spotifyDAO.GetTracksByArtist(hrefArtist);
             return result;
         }
 
